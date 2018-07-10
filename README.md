@@ -1,5 +1,9 @@
 # FoodAcidity
 
+---
+[![CircleCI](https://circleci.com/gh/lovo-h/FoodAcidity/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/lovo-h/FoodAcidity/tree/master)
+--- 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server

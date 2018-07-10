@@ -1,0 +1,47 @@
+version: 2
+
+# Settings common to each job.
+anchor_1: &defaults
+  working_directory: ~/foodacidity
+  docker:
+    - image: circleci/node:10.6-stretch-browsers
+
+# Restore cache based on package-lock.json checksum for branch.
+anchor_2: &restore_cache_defaults
+    keys:
+      - foodacidity-cache-{{ checksum "package-lock.json" }}
+      # fallback to using the latest cache if no exact match is found
+      - foodacidity-cache-
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *restore_cache_defaults
+      - run: node --version
+      - run: npm --version
+      - run: npm install --no-save
+      - run: npm run build
+      - save_cache:
+          key: foodacidity-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *restore_cache_defaults
+      - run: npm run test
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
