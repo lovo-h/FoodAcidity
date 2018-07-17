@@ -1,0 +1,106 @@
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../styles/variables";
+
+$howitworks-container-h: 30.0rem;
+$button-h: 5.4rem;
+$fa-main-color: #6484B4;
+
+
+.fa-title-row {
+  color: $fa-main-color;
+
+  h1 {
+    font-weight: bold;
+  }
+}
+
+.fa-howitworks-img {
+  position: absolute;
+  background: url("../../assets/img/blueberries.jpg") no-repeat;
+  background-size: cover;
+  height: $howitworks-container-h + $button-h;
+  overflow: hidden;
+}
+
+.fa-howitworks-txt {
+  width: 100%;
+  padding-top: 1.5rem;
+  color: whitesmoke;
+  height: $howitworks-container-h;
+  background-color: rgba(100, 132, 180, 0.85);
+  overflow: hidden;
+}
+
+.fa-howitworks-container {
+  position: relative;
+}
+
+.fa-enter-btn {
+  background-color: rgba($primary, 0.98);
+  font-size: $h3-font-size;
+  height: $button-h;
+  line-height: $button-h;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 0.8rem;
+}
+
+@include media-breakpoint-up(sm) {
+  .fa-title-row {
+    margin: 3.0rem 0 2.0rem 0;
+  }
+
+  .fa-howitworks-txt {
+    height: $howitworks-container-h - 3.0rem;
+  }
+
+  .fa-howitworks-img {
+    height: $howitworks-container-h + $button-h - 3.0rem;
+  }
+
+  h2 {
+    margin: 1.0rem 0;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .fa-title-row {
+    margin-top: 8.0rem;
+  }
+
+  .fa-howitworks-txt {
+    height: $howitworks-container-h - 6.0rem;
+  }
+
+  .fa-howitworks-img {
+    height: $howitworks-container-h + $button-h - 6.0rem;
+  }
+
+  h2 {
+    margin-top: 1.5rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .fa-howitworks-txt {
+    height: $howitworks-container-h - 8.0rem;
+  }
+
+  .fa-howitworks-img {
+    height: $howitworks-container-h + $button-h - 8.0rem;
+  }
+
+  h2 {
+    margin-top: 2.0rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+
+}
+

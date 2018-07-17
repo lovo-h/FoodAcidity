@@ -1,1 +1,33 @@
-Home Works!
+<div class="row fa-title-row">
+  <div class="col-12 text-center">
+    <h1>
+      Meal Validator
+    </h1>
+  </div>
+</div>
+
+<div class="row fa-howitworks-container">
+  <div class="col-12 fa-howitworks-img"></div>
+  <div class="col-12 fa-howitworks-txt">
+    <h2>How It Works</h2>
+    <p>
+      By using Meal Validator you can change your diet! No more worrying about what you can and cannot eat. Just type-in
+      the food that you want to eat and Meal Validator will let you know if you're in the clear!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vel velit iaculis sodales. Pellentesque
+      habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </p>
+  </div>
+</div>
+
+<div class="row" routerLink="/manage" *faShowAuthed="true">
+  <div class="col fa-enter-btn">
+    ENTER
+  </div>
+</div>
+<div class="row" routerLink="/login" *faShowAuthed="false">
+  <div class="col fa-enter-btn">
+    <span>SIGN IN</span>
+  </div>
+</div>
