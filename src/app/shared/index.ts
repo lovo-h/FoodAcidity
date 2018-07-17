@@ -3,3 +3,4 @@ export * from './footer/footer.component';
 
 
 export * from './service/api.service';
+export * from './service/user.service';

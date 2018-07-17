@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {
   ApiService,
+  UserService,
   AppRoutingModule,
   FooterComponent,
 } from './shared';
@@ -23,7 +24,8 @@ import {
     HttpClientModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
