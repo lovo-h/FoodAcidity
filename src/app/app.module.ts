@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { MealValidatorModule } from './meal-validator/meal-validator.module';
+
 import {
   ApiService,
   UserService,
@@ -25,6 +27,7 @@ import {
     HttpClientModule,
     AuthModule,
     HomeModule,
+    MealValidatorModule,
     SharedModule
   ],
   providers: [
