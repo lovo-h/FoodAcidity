@@ -9,6 +9,7 @@ import {
   UserService,
   AppRoutingModule,
   FooterComponent,
+  SharedModule
 } from './shared';
 
 
@@ -21,7 +22,8 @@ import {
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [
     ApiService,
