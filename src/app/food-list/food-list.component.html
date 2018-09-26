@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-start flex-wrap">
+  <span style="width: 100%;">
+    <div class="row">
+      <div [ngClass]="{'col-12': hDisplayType() === 1, 'col-6': hDisplayType() === 2, 'col-4': hDisplayType() === 3}"
+           *ngFor="let foodItems of getItems()">
+        <ul>
+          <li class="fa-fooditem-li" *ngFor="let foodItem of foodItems;">{{foodItem}}</li>
+        </ul>
+      </div>
+    </div>
+  </span>
+</div>

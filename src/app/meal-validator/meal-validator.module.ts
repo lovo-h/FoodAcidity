@@ -3,6 +3,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { SharedModule } from '../shared';
 import { MealValidatorComponent } from './meal-validator.component';
+import { FoodListComponent } from '../food-list/food-list.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,7 @@ import { MealValidatorComponent } from './meal-validator.component';
     SharedModule
   ],
   declarations: [
+    FoodListComponent,
     MealValidatorComponent,
   ]
 })
