@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { MealValidatorModule } from './meal-validator/meal-validator.module';
 
@@ -25,7 +24,6 @@ import {
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    AuthModule,
     HomeModule,
     MealValidatorModule,
     SharedModule
