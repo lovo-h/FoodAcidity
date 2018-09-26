@@ -3,7 +3,4 @@ export * from './shared.module';
 
 export * from './footer/footer.component';
 
-export * from './show-authed.directive';
-
 export * from './service/api.service';
-export * from './service/user.service';
