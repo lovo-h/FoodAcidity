@@ -1,3 +1,99 @@
-<p>
-  meal-validator works!
-</p>
+<div class="row fa-food-input-row">
+  <div class="col-12 text-center fa-title-row">
+    <h1>Food Acidity</h1>
+  </div>
+  <div class="col-12">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="foodItemForm" (ngSubmit)="submitFoodItem()">
+
+          <fieldset class="form-group">
+            <ng-select
+              class="custom"
+              bindValue="searchText"
+              placeholder="Enter food item name..."
+              (change)="changeFn($event)"
+              (search)="searchFn($event)"
+              [searchFn]="searchFilterFn"
+              [items]="items">
+              <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                <span [ngOptionHighlight]="search" class="">{{ item }}</span>
+              </ng-template>
+
+            </ng-select>
+
+            <input formControlName="{{keys.FORM.FOOD_ITEM}}" hidden>
+          </fieldset>
+          <!--<fieldset class="form-group">-->
+          <!---->
+          <!--</fieldset>-->
+
+          <div class="text-center">
+            <button class="btn fa-submit-btn" type="submit">
+              Submit
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="fa-error-msg">{{errorMessage}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row fa-edible-row row-eq-height row-flex-center">
+  <div class="col-1 fa-hidden-xs fa-edible-title-col">
+    <div class="fa-vertical-text">Edible</div>
+  </div>
+
+  <div class="col-12 col-sm-11 fa-edibility-custom-col">
+    <div class="row fa-edible-xs-row">
+      <div class="col-12 fa-visible-xs">
+        Edible
+      </div>
+    </div>
+    <div class="row fa-edible-list-row" [ngStyle]="{'height': getRemHeight()}">
+      <div class="col-12">
+        <fa-food-list style="width: 100%;" [itemsList]="foodItems['edible']"></fa-food-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row fa-inedible-row row-eq-height row-flex-center">
+  <div class="col-1 fa-hidden-xs fa-inedible-title-col">
+    <div class="fa-vertical-text">Inedible</div>
+  </div>
+
+  <div class="col-12 col-sm-11 fa-edibility-custom-col">
+    <div class="row fa-inedible-xs-row">
+      <div class="col-12 fa-visible-xs">
+        Inedible
+      </div>
+    </div>
+    <div class="row fa-inedible-list-row" [ngStyle]="{'height': getRemHeight()}">
+      <div class="col-12">
+        <fa-food-list style="width: 100%;" [itemsList]="foodItems['inedible']"></fa-food-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"
+        integrity="sha384-EEbPKCLAcxVCiXCi8k9bdeuayzAxVSmBzP/wLpmpd0LVW+Lvh2mjS1W02kdYm5z1"
+        crossorigin="anonymous"></script>
+<script>
+  var $input = $('.typeahead');
+  console.log($input.text());
+  $input.typeahead({
+    source: [{id: "someId1", name: "Display name 1"},
+      {id: "someId2", name: "Display name 2"}],
+    autoSelect: true
+  });
+</script>
