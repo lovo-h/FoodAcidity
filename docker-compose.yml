@@ -7,7 +7,36 @@ services:
       dockerfile: Dockerfile
     container_name: FAAngular
     ports:
-      - "4200:4200"
+    - "4200:4200"
     volumes:
-      - .:/home/foodacidity
-      - /home/foodacidity/node_modules
+    - .:/home/foodacidity
+    - /home/foodacidity/node_modules
+  golang:
+    build:
+      context: ~/go/src/github.com/lovohh/FoodAcidityAPI/
+      dockerfile: Dockerfile
+    container_name: FAGolang
+    ports:
+    - "3000:3000"
+    volumes:
+    - ~/go/src/github.com/lovohh/FoodAcidityAPI/:/go/src/github.com/lovohh/FoodAcidityAPI/
+    links:
+      - cockroach
+    restart: always
+  cockroach:
+    image: lovohh/cockroach_usdadb:nutrition
+    container_name: cdb
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+  caddy:
+    image: abiosoft/caddy
+    container_name: FACaddy
+    ports:
+    - "2015:2015"
+    links:
+    - angular
+    - golang
+    volumes:
+    - ${HOME}/.caddy:/root/.caddy
+    - ./Caddyfile:/etc/Caddyfile
