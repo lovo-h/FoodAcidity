@@ -8,7 +8,6 @@ import { MealValidatorModule } from './meal-validator/meal-validator.module';
 
 import {
   ApiService,
-  UserService,
   AppRoutingModule,
   FooterComponent,
   SharedModule
@@ -30,7 +29,6 @@ import {
   ],
   providers: [
     ApiService,
-    UserService
   ],
   bootstrap: [AppComponent]
 })
