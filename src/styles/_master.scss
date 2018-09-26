@@ -9,6 +9,12 @@
 $footer-height: 3.0rem;
 $footer-margins: 6.0rem;
 
+// Fonts
+
+@font-face {
+  font-family: MyMarker; src: url('/assets/fonts/marker.ttf') format('truetype');
+}
+
 // Styling
 
 html {
