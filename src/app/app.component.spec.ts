@@ -6,6 +6,7 @@ import { FooterComponent } from './shared';
 import { FoodListComponent } from './food-list/food-list.component';
 import { HomeComponent } from './home/home.component';
 import { MealValidatorComponent } from './meal-validator/meal-validator.component';
+import { SubscribeModalComponent } from './home/subscribe-modal/subscribe-modal.component';
 import { AppRoutingModule, SharedModule } from './shared';
 
 import { APP_BASE_HREF } from '@angular/common';
@@ -18,7 +19,8 @@ describe('AppComponent', () => {
         FoodListComponent,
         FooterComponent,
         HomeComponent,
-        MealValidatorComponent
+        MealValidatorComponent,
+        SubscribeModalComponent,
       ],
       imports: [AppRoutingModule, NgSelectModule, SharedModule],
       providers: [{provide: APP_BASE_HREF, useValue: '/'}]

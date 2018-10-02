@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { SubscribeModalComponent } from './subscribe-modal/subscribe-modal.component';
+import { MealValidatorModule } from '../meal-validator/meal-validator.module';
+import { AppRoutingModule, SharedModule } from '../shared';
+
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,9 +13,11 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [HomeComponent, SubscribeModalComponent],
+      imports: [AppRoutingModule, MealValidatorModule, SharedModule],
+      providers: [{provide: APP_BASE_HREF, useValue: '/'}],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

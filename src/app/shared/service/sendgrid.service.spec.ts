@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { SendgridService } from './sendgrid.service';
+import { SharedModule } from '../shared.module';
 
 describe('SendgridService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SendgridService]
+      providers: [SendgridService],
+      imports: [SharedModule],
     });
   });
 
