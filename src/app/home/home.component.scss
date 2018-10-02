@@ -5,7 +5,6 @@ $howitworks-container-h: 30.0rem;
 $button-h: 5.4rem;
 $fa-main-color: #6484B4;
 
-
 .fa-title-row {
   color: $fa-main-color;
 
@@ -33,6 +32,10 @@ $fa-main-color: #6484B4;
 
 .fa-howitworks-container {
   position: relative;
+}
+
+.fa-open-subscribe-modal {
+  text-decoration: underline;
 }
 
 .fa-enter-btn {
