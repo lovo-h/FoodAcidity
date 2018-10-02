@@ -33,7 +33,6 @@ export class FoodService {
   }
 
   getNutritionDataForNdbNo(ndbNo: string): Observable<any> {
-    console.log(ndbNo);
     return this.api.get(`/foods/${ndbNo}`).pipe(map((res: HttpResponse<any>) => {
       if (res.body.data.length < 5) {
         throw new Error('Error: missing nutrition data');

@@ -1,7 +1,5 @@
-import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { ApiService } from './api.service';
 import { KEYS as subscribeKeys } from '../../home/subscribe-modal/subscribe-consts';
 
