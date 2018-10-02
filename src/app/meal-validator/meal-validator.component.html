@@ -2,6 +2,7 @@
   <div class="col-12 text-center fa-title-row">
     <h1 routerLink="/">Food Acidity</h1>
   </div>
+
   <div class="col-12">
     <div class="row">
       <div class="col-12">
@@ -19,14 +20,10 @@
               <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
                 <span [ngOptionHighlight]="search" class="">{{ item }}</span>
               </ng-template>
-
             </ng-select>
 
             <input formControlName="{{keys.FORM.FOOD_ITEM}}" hidden>
           </fieldset>
-          <!--<fieldset class="form-group">-->
-          <!---->
-          <!--</fieldset>-->
 
           <div class="text-center">
             <button class="btn fa-submit-btn" type="submit">
@@ -37,6 +34,7 @@
         </form>
       </div>
     </div>
+
     <div class="row">
       <div class="col-12 text-center">
         <div class="fa-error-msg">{{errorMessage}}</div>
@@ -44,7 +42,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="row fa-edible-row row-eq-height row-flex-center">
   <div class="col-1 fa-hidden-xs fa-edible-title-col">
@@ -57,6 +54,7 @@
         Edible
       </div>
     </div>
+
     <div class="row fa-edible-list-row" [ngStyle]="{'height': getRemHeight()}">
       <div class="col-12">
         <i *ngIf="foodItems['edible'].length > 0" class="fa fa-envelope fa-email-icon" aria-hidden="true"
@@ -67,7 +65,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="row fa-inedible-row row-eq-height row-flex-center">
   <div class="col-1 fa-hidden-xs fa-inedible-title-col">
@@ -88,16 +85,4 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"
-        integrity="sha384-EEbPKCLAcxVCiXCi8k9bdeuayzAxVSmBzP/wLpmpd0LVW+Lvh2mjS1W02kdYm5z1"
-        crossorigin="anonymous"></script>
-<script>
-  var $input = $('.typeahead');
-  console.log($input.text());
-  $input.typeahead({
-    source: [{id: "someId1", name: "Display name 1"},
-      {id: "someId2", name: "Display name 2"}],
-    autoSelect: true
-  });
-</script>
 <fa-email-food-modal [edibleFoodList]="foodItems['edible']"></fa-email-food-modal>

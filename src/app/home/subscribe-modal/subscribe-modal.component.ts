@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SendgridService } from '../../shared';
+import { emailRegex } from '../../shared/common.consts';
 import { KEYS } from './subscribe-consts';
 
 
@@ -27,14 +28,7 @@ export class SubscribeModalComponent implements OnInit {
   ngOnInit() {
     this.keys = KEYS;
     const controlsConfig = {};
-    // source - https://emailregex.com/
-    const emailReg = new RegExp([
-      '^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|',
-      '(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|',
-      '(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'].join('')
-    );
-
-    controlsConfig[KEYS.FORM.EMAIL] = ['', [Validators.required, Validators.pattern(emailReg)]];
+    controlsConfig[KEYS.FORM.EMAIL] = ['', [Validators.required, Validators.pattern(emailRegex)]];
     controlsConfig[KEYS.FORM.FIRST_NAME] = ['', Validators.required];
     controlsConfig[KEYS.FORM.LAST_NAME] = ['', Validators.required];
 

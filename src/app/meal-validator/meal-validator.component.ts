@@ -21,7 +21,6 @@ const KEYS = {
   styleUrls: ['./meal-validator.component.scss']
 })
 export class MealValidatorComponent implements OnInit, OnDestroy {
-  @ViewChild('typeahead') typeAhead;
   exists: boolean;
   keys: any;
   errors: Errors;
