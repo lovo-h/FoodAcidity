@@ -61,12 +61,20 @@ $fa-fooditems-fontsize: 1.0rem;
 // TODO: modify this
 .ng-select.custom {
   background-color: lighten($fa-main-color, 20%);
-
 }
+
 // TODO: modify this
 .ng-select.custom .ng-select-container {
   min-height: 0;
   border-radius: 0;
+}
+
+.fa-email-icon {
+  position: absolute;
+  color: $fa-edible-color;
+  right: 1.3rem;
+  top: -0.1rem;
+  z-index: 1000;
 }
 
 .fa-edible-row {

@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 import { SharedModule } from '../shared';
-import { MealValidatorComponent } from './meal-validator.component';
+
+import { EmailFoodModalComponent } from './email-food-modal/email-food-modal.component';
 import { FoodListComponent } from '../food-list/food-list.component';
+import { MealValidatorComponent } from './meal-validator.component';
+
 
 @NgModule({
   imports: [
@@ -11,8 +14,10 @@ import { FoodListComponent } from '../food-list/food-list.component';
     SharedModule
   ],
   declarations: [
+    EmailFoodModalComponent,
     FoodListComponent,
     MealValidatorComponent,
   ]
 })
-export class MealValidatorModule { }
+export class MealValidatorModule {
+}
