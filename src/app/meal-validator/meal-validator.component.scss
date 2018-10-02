@@ -16,6 +16,10 @@ $fa-fooditems-fontsize: 1.0rem;
   h1 {
     font-weight: bold;
   }
+
+  h1:hover {
+    text-decoration: underline;
+  }
 }
 
 .fa-error-msg {
