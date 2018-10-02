@@ -5,3 +5,4 @@ export * from './footer/footer.component';
 
 export * from './service/api.service';
 export * from './service/food.service';
+export * from './service/sendgrid.service';
