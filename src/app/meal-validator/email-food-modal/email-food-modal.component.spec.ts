@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmailFoodModalComponent } from './email-food-modal.component';
+import { SharedModule } from '../../shared';
 
 describe('EmailFoodModalComponent', () => {
   let component: EmailFoodModalComponent;
@@ -8,9 +9,10 @@ describe('EmailFoodModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmailFoodModalComponent ]
+      declarations: [EmailFoodModalComponent],
+      imports: [SharedModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

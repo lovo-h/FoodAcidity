@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 import { AppComponent } from './app.component';
+import { EmailFoodModalComponent } from './meal-validator/email-food-modal/email-food-modal.component';
 import { FooterComponent } from './shared';
 import { FoodListComponent } from './food-list/food-list.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        EmailFoodModalComponent,
         FoodListComponent,
         FooterComponent,
         HomeComponent,
